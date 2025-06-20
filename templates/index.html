@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>QuickFix - Python Error Helper</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>🐍 QuickFix</h1>
+        <form method="POST">
+            <textarea name="error_text" placeholder="Paste your Python error here..." required></textarea>
+            <button type="submit">Explain Error</button>
+        </form>
+        {% if explanation %}
+            <div class="output">
+                <h2>Explanation:</h2>
+                <p>{{ explanation }}</p>
+            </div>
+        {% endif %}
+        <footer>
+            ⭐ Star us on <a href="https://github.com/Namish900489/Namish.Srivastava" target="_blank">GitHub</a>
+        </footer>
+    </div>
+</body>
+</html>
