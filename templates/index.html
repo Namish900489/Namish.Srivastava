@@ -1,25 +1,44 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <meta charset="UTF-8">
     <title>QuickFix - Python Error Helper</title>
-    <link rel="stylesheet" href="/static/style.css">
+
+    <!-- Animate.css for entrance animations -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+
+    <!-- AOS (Animate on Scroll) for scroll-triggered effects -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css"/>
+
+    <!-- Your own styles -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
     <div class="container">
-        <h1>🐍 QuickFix</h1>
-        <form method="POST">
+        <h1 class="animate__animated animate__fadeInDown">🐍 QuickFix</h1>
+        <form method="POST" data-aos="fade-up" data-aos-duration="1000">
             <textarea name="error_text" placeholder="Paste your Python error here..." required></textarea>
             <button type="submit">Explain Error</button>
         </form>
         {% if explanation %}
-            <div class="output">
+            <div class="output animate__animated animate__fadeInUp">
                 <h2>Explanation:</h2>
                 <p>{{ explanation }}</p>
             </div>
         {% endif %}
-        <footer>
-            ⭐ Star us on <a href="https://github.com/Namish900489/Namish.Srivastava" target="_blank">GitHub</a>
-        </footer>
-    </div>
+        <footer data-aos="fade-up" data-aos-delay="500">
+    ⭐ Star us on <a href="https://github.com/Namish900489/Namish.Srivastava" target="_blank">GitHub</a>
+</footer>
+</div>
+
+<!-- 💥 Animation Scripts -->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>AOS.init();</script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+
 </body>
 </html>
